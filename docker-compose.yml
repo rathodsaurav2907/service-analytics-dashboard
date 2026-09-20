@@ -1,0 +1,25 @@
+services:
+  notebook:
+    build: .
+    ports: ["8884:8888"]
+    volumes: ["./notebooks:/home/jovyan/work", "./data:/home/jovyan/data"]
+    environment:
+      JUPYTER_TOKEN: change-me
+      DATABASE_URL: postgresql://analytics:analytics@postgres:5432/service_analytics
+    depends_on:
+      postgres: { condition: service_healthy }
+  postgres:
+    image: postgres:17-alpine
+    ports: ["5434:5432"]
+    environment:
+      POSTGRES_DB: service_analytics
+      POSTGRES_USER: analytics
+      POSTGRES_PASSWORD: analytics
+    volumes: ["postgres_data:/var/lib/postgresql/data", "./sql:/docker-entrypoint-initdb.d"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U analytics -d service_analytics"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+volumes:
+  postgres_data:

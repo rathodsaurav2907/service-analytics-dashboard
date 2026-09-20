@@ -9,7 +9,7 @@ on:
 jobs:
   validate-warehouse:
     name: Validate PostgreSQL Warehouse & SQL Tests
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     services:
       postgres:
@@ -41,7 +41,7 @@ jobs:
 
   docker-build:
     name: Docker Build & Verification
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: validate-warehouse
 
     steps:

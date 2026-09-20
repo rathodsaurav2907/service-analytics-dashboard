@@ -15,7 +15,7 @@ services:
       POSTGRES_DB: service_analytics
       POSTGRES_USER: analytics
       POSTGRES_PASSWORD: analytics
-    volumes: ["postgres_data:/var/lib/postgresql/data", "./sql:/docker-entrypoint-initdb.d"]
+    volumes: ["postgres_data:/var/lib/postgresql/data", "./database:/docker-entrypoint-initdb.d"]
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U analytics -d service_analytics"]
       interval: 10s

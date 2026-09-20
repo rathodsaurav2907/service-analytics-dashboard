@@ -1,5 +1,11 @@
 # Service Analytics Dashboard
 
+[![CI/CD](https://github.com/rathodsaurav2907/service-analytics-dashboard/actions/workflows/ci.yml/badge.svg)](https://github.com/rathodsaurav2907/service-analytics-dashboard/actions/workflows/ci.yml)
+[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker&logoColor=white)](./docker-compose.yml)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-17-4169E1?logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?logo=jupyter&logoColor=white)](https://jupyter.org)
+[![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)](https://python.org)
+
 A cloud data warehouse, automated metric aggregation pipeline, and Jupyter exploratory environment for roadside and operational services, powered by PostgreSQL and Python.
 
 Part of the **[Microservices & ML Data Platform Ecosystem](../ECOSYSTEM.md)**.
